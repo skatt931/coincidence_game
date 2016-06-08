@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+#page {
+	position: absolute;
+	width: 270px;
+	height: 270px;
+	top: 50%;
+	left: 50%;
+	margin: -135px 0 0 -135px;
+}
+ul li {
+	display: inline-block;
+	margin: 5px;
+	background-color: aqua;
+	list-style-type: none;
+	border: 1px solid black;
+	width: 50px;
+	height: 50px;
+}
