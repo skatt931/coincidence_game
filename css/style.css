@@ -8,18 +8,19 @@ body {
 }
 #page {
 	position: absolute;
-	width: 270px;
-	height: 270px;
+	width: 460px;
+	height: 608px;
 	top: 50%;
 	left: 50%;
-	margin: -135px 0 0 -135px;
+	margin: -304px 0 0 -230px;
 }
 ul li {
 	display: inline-block;
 	margin: 5px;
-	background-color: aqua;
+	background: url("../images/card-cover.jpg");
 	list-style-type: none;
 	border: 1px solid black;
-	width: 50px;
-	height: 50px;
+	border-radius: 5px;
+	width: 100px;
+	height: 150px;
 }
