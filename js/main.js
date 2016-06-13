@@ -1,46 +1,59 @@
 $(document).ready(function () {
+	//All variables
+	var APP = {};
+	APP.count = 0;
+	APP.color;
+	APP.color2;
+	APP.first;
+	APP.second;
 
-	var count = 0;
-	var color;
-	var color2;
-	var first;
-	var second;
-
-	$("li").click(function () {
-		if (count === 0) {
-			count++;
+	//Event
+	$("li").on("click", flipOver);
+	
+	function flipOver() {
+		if (APP.count === 0) {
+			APP.count++;
 			//var count = 0;
-			first = $(this);
-			color = $(this).attr("data-color");
+			APP.first = $(this);
+			APP.color = $(this).attr("data-color");
+			$(this).addClass("clicked");
 
 			$(this).css({
-				backgroundColor: color
+				background: "url(images/" + APP.color + ".jpg)" 
 			});
 		} else {
-			count = 0;
+			if($(this).hasClass("clicked")){
+				return false
+			}
+			$("li").removeClass("clicked");
+			APP.count = 0;
 			//var count = 0;
-			second = $(this);
-			color2 = $(this).attr("data-color");
+			APP.second = $(this);
+			APP.color2 = $(this).attr("data-color");
 
 			$(this).css({
-				backgroundColor: color2
+				background: "url(images/" + APP.color2 + ".jpg)" 
 			});
-			if (color === color2) {
-				first.css({
+			
+			//Time Out for that we can see the second card
+			setTimeout(function(){
+			if (APP.color === APP.color2) {
+				APP.first.css({
 					opacity: "0"
 				});
-				second.css({
+				APP.second.css({
 					opacity: "0"
 				});
 			} else {
-				first.css({
-					backgroundColor: "aqua"
+				APP.first.css({
+					background: "url('../images/card-cover.jpg')"
 				});
-				second.css({
-					backgroundColor: "aqua"
+				APP.second.css({
+					background: "url('../images/card-cover.jpg')"
 				});
 			}
+			},700);
 		}
 
-	});
+	}
 });
