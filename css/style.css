@@ -17,6 +17,7 @@ body {
 ul li {
 	display: inline-block;
 	margin: 5px;
+	cursor: pointer;
 	background: url("../images/card-cover.jpg");
 	list-style-type: none;
 	border: 1px solid black;
